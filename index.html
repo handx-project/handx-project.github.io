@@ -1,0 +1,877 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description" content="HandX+: Scaling Up Text-Conditioned Bimanual Motion Generation">
+    <meta name="keywords" content="HandX+">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <meta property="og:image" content="static/images/teaser.png"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+
+    <title>HandX+</title>
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+  </head>
+  <body>
+
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-2 publication-title" style="font-family: 'Noto Sans', sans-serif"><span style="color: #379cab">HandX+:</span> Scaling Up Bimanual Motion Generation</h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">Zimu Zhang<sup>1</sup><sup>†</sup></span>
+                <span class="author-block"><a href="https://nboierzyc.github.io/" target="_blank" rel="noopener">Yucheng Zhang</a><sup>1</sup><sup>†</sup></span>
+                <span class="author-block"><a href="https://xiyan-xu.github.io/" target="_blank" rel="noopener">Xiyan Xu</a><sup>1</sup></span>
+                <span class="author-block">Ziyin Wang<sup>1</sup></span>
+                <span class="author-block"><a href="https://sirui-xu.github.io/" target="_blank" rel="noopener">Sirui Xu</a><sup>1</sup><sup>‡</sup></span>
+                <span class="author-block">Kai Zhou<sup>2,3</sup></span>
+                <br>
+                <span class="author-block"><a href="https://zhoubinwy.github.io/" target="_blank" rel="noopener">Bing Zhou</a><sup>3</sup></span>
+                <span class="author-block"><a href="https://ericguo5513.github.io/" target="_blank" rel="noopener">Chuan Guo</a><sup>3</sup></span>
+                <span class="author-block"><a href="https://jianwang-cmu.github.io/" target="_blank" rel="noopener">Jian Wang</a><sup>3</sup></span>
+                <span class="author-block"><a href="https://yxw.cs.illinois.edu/" target="_blank" rel="noopener">Yu-Xiong Wang</a><sup>1</sup><sup>*</sup></span>
+                <span class="author-block"><a href="https://lgui.web.illinois.edu/" target="_blank" rel="noopener">Liang-Yan Gui</a><sup>1</sup><sup>*</sup></span>
+              </div>
+              <div class="is-size-6 publication-authors" style="margin-top: 0.5rem;">
+                <span class="author-block"><sup>1</sup>University of Illinois Urbana-Champaign</span>
+                <span class="author-block"><sup>2</sup>Specs Inc.</span>
+                <span class="author-block"><sup>3</sup>Snap Inc.</span>
+              </div>
+              <div class="is-size-6 publication-authors" style="margin-top: 0.3rem;">
+                <span class="author-block"><sup>†</sup>Equal Contribution</span>
+                <span class="author-block"><sup>‡</sup>Project Lead</span>
+                <span class="author-block"><sup>*</sup>Equal Advising</span>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Paper abstract -->
+  <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img  src="static/images/teaser.png"   width="100%" height="100%" scrolling="no" frameborder="0" ></img>
+    </div>
+  </div>
+</section>
+  <!-- End paper abstract -->
+
+<section class="hero is-light is-small">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <br>
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <!-- <div style="text-align: center;"><img src="./static/images/teaser.png" width="100%"/></div>
+        <div class="column">
+          <img src="./static/images/teaser.png" />
+        </div> -->
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Text-conditioned human motion and video generation have progressed rapidly, yet realistic hand motion and bimanual interaction remain significantly underexplored. Existing whole-body models often overlook the fine-grained details required for natural dexterous behavior, such as finger articulation, contact timing, and inter-hand coordination. We aim to close this gap by introducing a hand-centric animation framework. As a foundation, we consolidate large-scale motion data from diverse sources into a unified corpus with rigorous animation quality control. Through this process, we identify a limitation in most of the existing resources: the absence of high-fidelity bimanual motion data that capture nuanced finger dynamics and inter-hand collaboration. To remedy this, we collect a new dataset designed to enrich these underrepresented aspects. To scale motion-language alignment automatically, rather than relying on large language models to directly reason over raw motion sequences, we propose a decoupled paradigm. It extracts representative motion features, such as contact events and finger flexion, and then leverages LLM's reasoning to generate fine-grained, semantically rich descriptions aligned with these features.
+            Building on our corpus and annotations, we develop benchmark models using diffusion and FSQ-based architectures and enable versatile conditioning modes, including standard text-conditioned generation, hand-reaction synthesis, motion inbetweening, keyframe-guided generation, and long-horizon temporal composition. Experiments show that our approach achieves strong text alignment, high-quality dexterous motion, and accurate contact prediction, supported by newly designed metrics tailored for hand animation. We additionally observe clear scaling behavior: larger models trained on larger, higher-quality datasets produce markedly more semantically coherent bimanual motions. All data will be released to support future research.          </p>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+</section>
+
+<!-- Motion Capture Setup -->
+<section class="hero teaser">
+  <div class="hero-body">
+    <br><br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3"><span style="color: #379cab">Motion</span> Capture</h2>
+    </div>
+    <br>
+    <div class="container">
+
+      <div id="mocap-carousel" class="carousel">
+        <div class="item">
+          <div class="columns is-centered">
+            <div class="column is-7">
+              <div class="content has-text-centered">
+                <div class="videobox">
+                <video poster="" id="mocap-2" autoplay controls muted loop height="100%">
+                  <source src="./static/images/motion_capture/datasets_2.mp4"
+                          type="video/mp4">
+                </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="columns is-centered">
+            <div class="column is-7">
+              <div class="content has-text-centered">
+                <div class="videobox">
+                <video poster="" id="mocap-3" autoplay controls muted loop height="100%">
+                  <source src="./static/images/motion_capture/datasets_3.mp4"
+                          type="video/mp4">
+                </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="columns is-centered">
+            <div class="column is-7">
+              <div class="content has-text-centered">
+                <div class="videobox">
+                <video poster="" id="mocap-4" autoplay controls muted loop height="100%">
+                  <source src="./static/images/motion_capture/datasets_4.mp4"
+                          type="video/mp4">
+                </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="columns is-centered">
+            <div class="column is-7">
+              <div class="content has-text-centered">
+                <div class="videobox">
+                <video poster="" id="mocap-5" autoplay controls muted loop height="100%">
+                  <source src="./static/images/motion_capture/datasets_5.mp4"
+                          type="video/mp4">
+                </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="columns is-centered">
+            <div class="column is-7">
+              <div class="content has-text-centered">
+                <div class="videobox">
+                <video poster="" id="mocap-6" autoplay controls muted loop height="100%">
+                  <source src="./static/images/motion_capture/datasets_6.mp4"
+                          type="video/mp4">
+                </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="columns is-centered">
+            <div class="column is-7">
+              <div class="content has-text-centered">
+                <div class="videobox">
+                <video poster="" id="mocap-7" autoplay controls muted loop height="100%">
+                  <source src="./static/images/motion_capture/datasets_7.mp4"
+                          type="video/mp4">
+                </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="columns is-centered">
+            <div class="column is-7">
+              <div class="content has-text-centered">
+                <div class="videobox">
+                <video poster="" id="mocap-8" autoplay controls muted loop height="100%">
+                  <source src="./static/images/motion_capture/datasets_8.mp4"
+                          type="video/mp4">
+                </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+      </div>
+      <br>
+  </div>
+</section>
+<!-- End Motion Capture Setup -->
+
+<!-- Dataset Comparison -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <br><br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3"><span style="color: #379cab">Dataset</span> Comparison</h2>
+    </div>
+    <br>
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img src="static/images/dataset_comparison.png" width="100%" alt="Dataset Comparison">
+          <div class="content has-text-justified">
+            <p>
+              <b>Comparison of major motion and hand-interaction datasets.</b> The left panel summarizes dataset scale and textual annotation properties. For datasets with a reported subset (e.g., HOT3D, ARCTIC), values follow the “Selected / Total” format, where the unselected portion is of lower quality (e.g., jitter, hand freeze, or finger freeze). For text granularity, “coarse” indicates short textual descriptions without finger details, while “action” denotes discrete action-category labels. Our data offers fine-grained, multi-level descriptions covering left-hand, right-hand, and inter-hand relations (Figure 1). The right panel visualizes key statistics of bimanual motion: Contact Ratio (fraction of frames in contact), Contact Duration (average continuous contact span), Contact Frequency (number of distinct contact events), and Motion Intensity (finger dynamics). Details of these metric formulations are presented in supplementary.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+</section>
+<!-- End Dataset Comparison -->
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <br><br>
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3"><span style="color: #379cab";>Dataset</span> Examples</h2>
+      </div>
+      <br>
+      <div class="container">
+
+        <div id="dataset-carousel" class="carousel">
+          <div class="item">
+            <div class="columns is-centered">
+              <div class="column is-7">
+                <div class="content has-text-centered">
+                  <h2 class="subtitle is-6 hand-description" style="margin: left 5px; margin: right 5px; line-height: 1.8;">
+                    <span style="color:rgb(220, 53, 69)">Left</span>: While the thumb and middle finger stay extended, the ring and pinky fingers perform a slow, continuous bending motion. The wrist moves up and down and side to side.<br>
+                    <span style="color:rgb(31, 189, 225)">Right</span>: The hand transitions from a closed to an open posture as the index, middle, ring, and pinky fingers all straighten out over time.<br>
+                    <span style="color:rgb(40, 167, 69)">Relation</span>: The right index and middle fingertips are in constant contact with the left palm for the majority of the motion. They break contact and move far apart rapidly at the end. The right hand also moves to the right of, and from above to below, the left hand.
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div class="columns is-centered">
+              <div class="column is-5">
+                <div class="content has-text-centered">
+                  <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+                    <source src="./static/images/dataset_sample/snap_clip_003_white_bg.mp4"
+                            type="video/mp4">
+                  </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="columns is-centered">
+              <div class="column is-7">
+                <div class="content has-text-centered">
+                  <h2 class="subtitle is-6 hand-description" style="margin: left 5px; margin: right 5px; line-height: 1.8;">
+                    <span style="color:rgb(220, 53, 69)">Left</span>: All fingers are held completely straight for the entire sequence. The primary movements involve the index, middle, and ring fingers spreading apart from a closed position. At the start, the wrist moves slightly forward.<br>
+                    <span style="color:rgb(31, 189, 225)">Right</span>: The hand is consistently flat and open, but the thumb performs a single bending motion mid-sequence. The wrist slowly drifts to the right.<br>
+                    <span style="color:rgb(40, 167, 69)">Relation</span>: The palms stay near and aligned. The central action involves repeated tapping contacts between the corresponding fingertips of both hands, from the pinky to the index finger.
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div class="columns is-centered">
+              <div class="column is-5">
+                <div class="content has-text-centered">
+                  <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+                    <source src="./static/images/dataset_sample/snap_clip_004_white_bg.mp4"
+                            type="video/mp4">
+                  </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="columns is-centered">
+              <div class="column is-7">
+                <div class="content has-text-centered">
+                  <h2 class="subtitle is-6 hand-description" style="margin: left 5px; margin: right 5px; line-height: 1.8;">
+                    <span style="color:rgb(220, 53, 69)">Left</span>: With the thumb, middle, ring, and pinky fingers held straight, the index finger transitions from a partially bent to a fully extended state. The wrist moves down while shifting side-to-side. The gap between the index and middle fingers closes early on.<br>
+                    <span style="color:rgb(31, 189, 225)">Right</span>: The index and middle fingers, initially straight, bend at the base during the first half of the motion while other fingers remain extended. The wrist moves predominantly upwards. After the middle finger bends, the spacing between it and the index finger opens up.<br>
+                    <span style="color:rgb(40, 167, 69)">Relation</span>: The primary interaction is a sequence of contacts. The left index tip is initially in contact with the right palm, and then they move apart. Later, the right index tip makes contact with the left palm. During this time, the right hand moves from being below the left hand to above it.
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div class="columns is-centered">
+              <div class="column is-5">
+                <div class="content has-text-centered">
+                  <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                    <source src="./static/images/dataset_sample/snap_clip_018_white_bg.mp4"
+                            type="video/mp4">
+                  </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="columns is-centered">
+              <div class="column is-7">
+                <div class="content has-text-centered">
+                  <h2 class="subtitle is-6 hand-description" style="margin: left 5px; margin: right 5px; line-height: 1.8;">
+                    <span style="color:rgb(220, 53, 69)">Left</span>: The hand performs a single clench-and-release motion. Starting open, all four fingers bend rapidly to a fully bent state, and then straighten out over the second half of the sequence. The wrist moves to the right during this action.<br>
+                    <span style="color:rgb(31, 189, 225)">Right</span>: The hand's four fingers synchronously bend into a fist and then extend again, mirroring the left hand's action. The wrist moves left and upwards, bringing it towards the left hand.<br>
+                    <span style="color:rgb(40, 167, 69)">Relation</span>: The primary interaction is a fast approach of the hands, leading to contact between the palms. This palm contact is accompanied by contact between the fingertips of the index, middle, ring, and pinky fingers of both hands before they separate.
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div class="columns is-centered">
+              <div class="column is-5">
+                <div class="content has-text-centered">
+                  <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                    <source src="./static/images/dataset_sample/snap_clip_047_white_bg.mp4"
+                            type="video/mp4">
+                  </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+        </div>
+        <br>
+    </div>
+    </div>
+  </section>
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <br><br>
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3"><span style="color: #379cab";>Text</span> to Motion Generation</h2>
+      </div>
+      <br>
+      <div class="container">
+
+        <div id="text2motion-carousel" class="carousel">
+          <div class="item">
+            <div class="columns is-centered">
+              <div class="column is-7">
+                <div class="content has-text-centered">
+                  <h2 class="subtitle is-6 hand-description" style="margin: left 5px; margin: right 5px; line-height: 1.8;">
+                    <span style="color:rgb(220, 53, 69)">Left</span>: The thumb is held fully extended while the other four fingers keep a bent posture. The thumb makes brief contact with all four fingertips throughout the sequence.<br>
+                    <span style="color:rgb(31, 189, 225)">Right</span>: The fingers perform various bending and straightening motions. The thumb makes several distinct, brief contacts with the ring, index, and middle fingertips.<br>
+                    <span style="color:rgb(40, 167, 69)">Relation</span>: The hands stay far apart. The right hand is consistently positioned to the right of and above the left hand.
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div class="columns is-centered">
+              <div class="column is-5">
+                <div class="content has-text-centered">
+                  <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+                    <source src="./static/images/text2motion/text2motion_008_generation_3_white_bg.mp4"
+                            type="video/mp4">
+                  </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="columns is-centered">
+              <div class="column is-7">
+                <div class="content has-text-centered">
+                  <h2 class="subtitle is-6 hand-description" style="margin: left 5px; margin: right 5px; line-height: 1.8;">
+                    <span style="color:rgb(220, 53, 69)">Left</span>: The hand transitions from a relatively open state to a closed one as the fingers bend. The motion concludes with the middle finger and thumb touching.<br>
+                    <span style="color:rgb(31, 189, 225)">Right</span>: The fingers uncurl from a bent to an extended position during the first half of the sequence. This is preceded by contact between the thumb and the index and middle fingertips.<br>
+                    <span style="color:rgb(40, 167, 69)">Relation</span>: There are two instances of contact between the left and right thumbs at the beginning, followed by a rapid separation of the hands.
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div class="columns is-centered">
+              <div class="column is-5">
+                <div class="content has-text-centered">
+                  <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+                    <source src="./static/images/text2motion/text2motion_063_generation_1_white_bg.mp4"
+                            type="video/mp4">
+                  </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="columns is-centered">
+              <div class="column is-7">
+                <div class="content has-text-centered">
+                  <h2 class="subtitle is-6 hand-description" style="margin: left 5px; margin: right 5px; line-height: 1.8;">
+                    <span style="color:rgb(220, 53, 69)">Left</span>: The hand maintains a static pose with the thumb extended and fingers bent. The most notable event is the index and middle fingers moving from an open to a closed spacing at a medium speed.<br>
+                    <span style="color:rgb(31, 189, 225)">Right</span>: The thumb is highly active, making contact with the index fingertip three times and the middle fingertip four times throughout the sequence. The ring fingertip also makes two very brief contacts with the thumb.<br>
+                    <span style="color:rgb(40, 167, 69)">Relation</span>: The hands are far apart and do not interact. The left hand is consistently positioned to the left of, behind, and above the left hand.
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div class="columns is-centered">
+              <div class="column is-5">
+                <div class="content has-text-centered">
+                  <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+                    <source src="./static/images/text2motion/text2motion_val_sample_389_generation_2_mano_white_bg.mp4"
+                            type="video/mp4">
+                  </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="columns is-centered">
+              <div class="column is-7">
+                <div class="content has-text-centered">
+                  <h2 class="subtitle is-6 hand-description" style="margin: left 5px; margin: right 5px; line-height: 1.8;">
+                    <span style="color:rgb(220, 53, 69)">Left</span>: The fingers perform various bending and straightening motions. The pinky hyperextends at its base, and the ring finger briefly makes contact with the thumb.<br>
+                    <span style="color:rgb(31, 189, 225)">Right</span>: The fingers are highly active. The pinky also hyperextends at its base. The thumb makes contact with the middle and index fingertips at different times.<br>
+                    <span style="color:rgb(40, 167, 69)">Relation</span>: The hands start at a medium distance and move far apart, while the right hand moves down and then up relative to the left.
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div class="columns is-centered">
+              <div class="column is-5">
+                <div class="content has-text-centered">
+                  <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+                    <source src="./static/images/text2motion/text2motion_val_sample_546_generation_2_white_bg.mp4"
+                            type="video/mp4">
+                  </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <br>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <br>
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3"><span style="color: #379cab";>Versatile</span> Generation Tasks</h2>
+      </div>
+      <br>
+      <div class="container">
+
+      <!-- Row 1 -->
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-4">Motion In-betweening</h2>
+      </div>
+      <br>
+      <div class="columns is-centered">
+        <!-- Sample 1 -->
+        <div class="column is-5">
+          <div class="columns is-gapless is-centered">
+            <div class="column is-one-third">
+              <div class="content has-text-centered">
+                <h2 class="subtitle is-6" style="margin-bottom: 5px;">Start</h2>
+                <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+                    <source src="static/images/motion_inbetween/inbetween_006_generation_2_white_bg_start.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="content has-text-centered">
+                <h2 class="subtitle is-6" style="margin-bottom: 5px;">Generation Result</h2>
+                <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+                    <source src="static/images/motion_inbetween/inbetween_006_generation_2_white_bg.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="content has-text-centered">
+                <h2 class="subtitle is-6" style="margin-bottom: 5px;">End</h2>
+                <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+                    <source src="static/images/motion_inbetween/inbetween_006_generation_2_white_bg_end.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample 2 -->
+        <div class="column is-5">
+          <div class="columns is-gapless is-centered">
+            <div class="column is-one-third">
+              <div class="content has-text-centered">
+                <h2 class="subtitle is-6" style="margin-bottom: 5px;">Start</h2>
+                <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+                    <source src="static/images/motion_inbetween/inbtween_035_generation_2_white_bg_start.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="content has-text-centered">
+                <h2 class="subtitle is-6" style="margin-bottom: 5px;">Generation Result</h2>
+                <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+                    <source src="static/images/motion_inbetween/inbtween_035_generation_2_white_bg.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="content has-text-centered">
+                <h2 class="subtitle is-6" style="margin-bottom: 5px;">End</h2>
+                <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+                    <source src="static/images/motion_inbetween/inbtween_035_generation_2_white_bg_end.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <!-- Row 2 -->
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-4">Keyframe Control</h2>
+      </div>
+      <br>
+      <div class="columns is-centered">
+        <!-- Sample 1 -->
+        <div class="column is-4">
+          <div class="columns is-gapless is-centered">
+            <div class="column is-half">
+              <div class="content has-text-centered">
+                <h2 class="subtitle is-6" style="margin-bottom: 5px;">Keyframe Input</h2>
+                <div class="videobox">
+                  <img src="static/images/keyframe control/keyframe_010_generation_3_white_bg/frame_0031.png" width="100%">
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="content has-text-centered">
+                <h2 class="subtitle is-6" style="margin-bottom: 5px;">Generation Result</h2>
+                <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+                    <source src="./static/images/keyframe control/keyframe_010_generation_3_white_bg_freeze.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample 2 -->
+        <div class="column is-4">
+          <div class="columns is-gapless is-centered">
+            <div class="column is-half">
+              <div class="content has-text-centered">
+                <h2 class="subtitle is-6" style="margin-bottom: 5px;">Keyframe Input</h2>
+                <div class="videobox">
+                  <img src="static/images/keyframe control/contact_keyframe_val_sample_122_idx32848_generation_0_mano_white_bg/frame_0031.png" width="100%">
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="content has-text-centered">
+                <h2 class="subtitle is-6" style="margin-bottom: 5px;">Generation Result</h2>
+                <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+                    <source src="./static/images/keyframe control/contact_keyframe_val_sample_122_idx32848_generation_0_mano_white_bg_freeze.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <!-- Row 3 -->
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-4">Wrist Trajectory Control</h2>
+      </div>
+      <br>
+      <div class="columns is-centered" style="gap: 1.5rem;">
+        <div class="column is-one-fifth">
+          <div class="content has-text-centered">
+
+            <div class="videobox">
+            <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+              <source src="./static/images/wrist_control/wrist_066_generation_2_mano_white_bg.mp4"
+                      type="video/mp4">
+            </video>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-fifth">
+          <div class="content has-text-centered">
+
+            <div class="videobox">
+            <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+              <source src="./static/images/wrist_control/wrist_traj_val_sample_095_generation_0_white_bg.mp4"
+                      type="video/mp4">
+            </video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <!-- Row 4 -->
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-4">Hand-reaction Synthesis</h2>
+      </div>
+      <br>
+      <div class="columns is-centered" style="gap: 1.5rem;">
+        <div class="column is-one-fifth">
+          <div class="content has-text-centered">
+
+            <div class="videobox">
+            <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+              <source src="./static/images/fix_left/fix_lefthand_val_sample_208_generation_2_mano_white_bg.mp4"
+                      type="video/mp4">
+            </video>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-fifth">
+          <div class="content has-text-centered">
+
+            <div class="videobox">
+            <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+              <source src="./static/images/fix_left/fixleft_189_generation_0_white_bg.mp4"
+                      type="video/mp4">
+            </video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <!-- Row 5 -->
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-4">Long Horizon Generation</h2>
+      </div>
+      <br>
+      <div class="columns is-centered" style="gap: 1.5rem;">
+        <div class="column is-one-fifth">
+          <div class="content has-text-centered">
+
+            <div class="videobox">
+            <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+              <source src="./static/images/long_horizon/024_combined_2_mano_white_bg.mp4"
+                      type="video/mp4">
+            </video>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-fifth">
+          <div class="content has-text-centered">
+
+            <div class="videobox">
+            <video poster="" id="pelvis" autoplay controls muted loop width="100%">
+              <source src="./static/images/long_horizon/stage12_white_bg.mp4"
+                      type="video/mp4">
+            </video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p class="subtitle is-7" style="color: #666; margin-top: -10px;">The green section represents the results generated by the first prompt, while the orange section represents the results generated by the second prompt. Our model ensures smooth transitions while maintaining correspondence between the motion and their respective text segments.</p>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <br><br>
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3"><span style="color: #379cab";>Qualitative</span> Evaluation on Scaling Law</h2>
+      </div>
+      <br>
+      <div class="container">
+
+        <div id="scaling-carousel" class="carousel">
+          <div class="item">
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-7">
+                <h2 class="subtitle is-6 hand-description" style="margin: left 5px; margin: right 5px; line-height: 1.8;">
+                  <span style="color:rgb(220, 53, 69)">Left</span>: Mid-sequence, the thumb makes contact with the index tip, followed shortly by contact with the pinky tip. During this period, the index, thumb, and pinky fingers straighten. The space between the index-middle and ring-pinky finger pairs opens up. The wrist moves continuously in all directions.<br>
+                  <span style="color:rgb(31, 189, 225)">Right</span>: The thumb maintains contact with the index fingertip at the very beginning and again for a period mid-sequence. The index, middle, and ring fingers transition from a partially bent to a fully extended posture. Towards the end, the pinky begins to bend.<br>
+                  <span style="color:rgb(40, 167, 69)">Relation</span>: The hands do not interact and stay far apart. Their relative alignment changes dynamically, as the right hand moves from below the left to above it and from behind to in front.
+                </h2>
+              </div>
+            </div>
+
+            <div class="columns is-centered" style="gap: 4.5rem;">
+              <div class="column is-3">
+                <div class="content has-text-centered">
+                  <h2 class="subtitle is-5" style="margin-bottom: 10px;">Trained on 100% Dataset</h2>
+                  <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                    <source src="./static/images/scaling_law/text2motion_val_sample_050_generation_0_white_bg.mp4"
+                            type="video/mp4">
+                  </video>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-3">
+                <div class="content has-text-centered">
+                  <h2 class="subtitle is-5" style="margin-bottom: 10px;">Trained on 20% Dataset</h2>
+                  <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                    <source src="./static/images/scaling_law/data20_50_generation_0_white_bg.mp4"
+                            type="video/mp4">
+                  </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-7">
+                <h2 class="subtitle is-6 hand-description" style="margin: left 5px; margin: right 5px; line-height: 1.8;">
+                  <span style="color:rgb(220, 53, 69)">Left</span>: The hand exhibits two distinct contact events between the thumb and index fingertips. The ring and pinky fingers curl inwards, while the index and middle fingers move closer together.<br>
+                  <span style="color:rgb(31, 189, 225)">Right</span>: The thumb and index fingertips are in contact for a period. Afterwards, the other fingers gradually extend to a straight position. The fingers remain close together.<br>
+                  <span style="color:rgb(40, 167, 69)">Relation</span>: A constant, distant spatial relationship is maintained between the two hands.
+                </h2>
+              </div>
+            </div>
+
+            <div class="columns is-centered" style="gap: 4.5rem;">
+              <div class="column is-3">
+                <div class="content has-text-centered">
+                  <h2 class="subtitle is-5" style="margin-bottom: 10px;">Trained on 100% Dataset</h2>
+                  <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                    <source src="./static/images/scaling_law/text2motion_val_sample_062_generation_0_white_bg.mp4"
+                            type="video/mp4">
+                  </video>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-3">
+                <div class="content has-text-centered">
+                  <h2 class="subtitle is-5" style="margin-bottom: 10px;">Trained on 20% Dataset</h2>
+                  <div class="videobox">
+                  <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                    <source src="./static/images/scaling_law/data20_062_generation_1_white_bg.mp4"
+                            type="video/mp4">
+                  </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <br>
+    </div>
+  </section>
+  <!--  -->
+
+
+
+
+
+
+
+
+
+
+  <!--BibTex citation -->
+  <!--End BibTex citation -->
+
+
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+      <!-- End of Statcounter Code -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                Thanks to <a href="https://keunhong.com/">Keunhong Park</a> for the <a href="https://nerfies.github.io/">website template</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+  </html>
