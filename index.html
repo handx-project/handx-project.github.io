@@ -323,246 +323,210 @@
       <div class="columns is-centered has-text-centered fade-in">
         <h2 class="title is-3"><span style="color: #379cab">Versatile</span> Generation Tasks</h2>
       </div>
-      <div style="margin-top:1rem;">
-      <br>
-      <!-- Row 1 -->
-      <div class="columns is-centered has-text-centered">
-        <h2 class="title is-4">Motion In-betweening</h2>
-      </div>
-      <br>
-      <div class="columns is-centered">
-        <!-- Sample 1 -->
-        <div class="column is-5">
-          <div class="columns is-gapless is-centered">
-            <div class="column is-one-third">
-              <div class="content has-text-centered">
-                <h2 class="subtitle is-6" style="margin-bottom: 5px;">Start</h2>
-                <div class="videobox">
-                  <video preload="none" poster="" id="pelvis" playsinline controls muted loop width="100%">
-                    <source src="static/images/motion_inbetween/inbetween_006_generation_2_white_bg_start.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-            </div>
-            <div class="column is-one-third">
-              <div class="content has-text-centered">
-                <h2 class="subtitle is-6" style="margin-bottom: 5px;">Generation Result</h2>
-                <div class="videobox">
-                  <video preload="none" poster="" id="pelvis" playsinline controls muted loop width="100%">
-                    <source src="static/images/motion_inbetween/inbetween_006_generation_2_white_bg.mp4"
-                            type="video/mp4">
-                  </video>
-                </div>
-              </div>
-            </div>
-            <div class="column is-one-third">
-              <div class="content has-text-centered">
-                <h2 class="subtitle is-6" style="margin-bottom: 5px;">End</h2>
-                <div class="videobox">
-                  <video preload="none" poster="" id="pelvis" playsinline controls muted loop width="100%">
-                    <source src="static/images/motion_inbetween/inbetween_006_generation_2_white_bg_end.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Sample 2 -->
-        <div class="column is-5">
-          <div class="columns is-gapless is-centered">
-            <div class="column is-one-third">
-              <div class="content has-text-centered">
-                <h2 class="subtitle is-6" style="margin-bottom: 5px;">Start</h2>
-                <div class="videobox">
-                  <video preload="none" poster="" id="pelvis" playsinline controls muted loop width="100%">
-                    <source src="static/images/motion_inbetween/inbtween_035_generation_2_white_bg_start.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-            </div>
-            <div class="column is-one-third">
-              <div class="content has-text-centered">
-                <h2 class="subtitle is-6" style="margin-bottom: 5px;">Generation Result</h2>
-                <div class="videobox">
-                  <video preload="none" poster="" id="pelvis" playsinline controls muted loop width="100%">
-                    <source src="static/images/motion_inbetween/inbtween_035_generation_2_white_bg.mp4"
-                            type="video/mp4">
-                  </video>
-                </div>
-              </div>
-            </div>
-            <div class="column is-one-third">
-              <div class="content has-text-centered">
-                <h2 class="subtitle is-6" style="margin-bottom: 5px;">End</h2>
-                <div class="videobox">
-                  <video preload="none" poster="" id="pelvis" playsinline controls muted loop width="100%">
-                    <source src="static/images/motion_inbetween/inbtween_035_generation_2_white_bg_end.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <!-- Task tabs -->
+      <div class="task-tabs" style="margin-top:1rem;">
+        <button type="button" class="task-tab is-active" data-target="tab-inbetween">Motion In-betweening</button>
+        <button type="button" class="task-tab" data-target="tab-keyframe">Keyframe Control</button>
+        <button type="button" class="task-tab" data-target="tab-wrist">Wrist Trajectory</button>
+        <button type="button" class="task-tab" data-target="tab-reaction">Hand-reaction</button>
+        <button type="button" class="task-tab" data-target="tab-longhorizon">Long Horizon</button>
       </div>
-      <br>
 
-      <!-- Row 2 -->
-      <div class="columns is-centered has-text-centered">
-        <h2 class="title is-4">Keyframe Control</h2>
-      </div>
-      <br>
-      <div class="columns is-centered">
-        <!-- Sample 1 -->
-        <div class="column is-4">
-          <div class="columns is-gapless is-centered">
-            <div class="column is-half">
-              <div class="content has-text-centered">
-                <h2 class="subtitle is-6" style="margin-bottom: 5px;">Keyframe Input</h2>
-                <div class="videobox">
-                  <img src="static/images/keyframe control/keyframe_010_generation_3_white_bg/frame_0031.png" width="100%">
+      <!-- Tab panels -->
+      <div class="task-panels">
+
+        <!-- Motion In-betweening -->
+        <div class="task-panel is-active" id="tab-inbetween">
+          <div class="columns is-centered">
+            <div class="column is-5">
+              <div class="columns is-gapless is-centered">
+                <div class="column is-one-third">
+                  <div class="content has-text-centered">
+                    <h2 class="subtitle is-6" style="margin-bottom: 5px;">Start</h2>
+                    <div class="videobox">
+                      <video preload="none" poster="" playsinline controls muted loop width="100%">
+                        <source src="static/images/motion_inbetween/inbetween_006_generation_2_white_bg_start.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-one-third">
+                  <div class="content has-text-centered">
+                    <h2 class="subtitle is-6" style="margin-bottom: 5px;">Result</h2>
+                    <div class="videobox">
+                      <video preload="none" poster="" playsinline controls muted loop width="100%">
+                        <source src="static/images/motion_inbetween/inbetween_006_generation_2_white_bg.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-one-third">
+                  <div class="content has-text-centered">
+                    <h2 class="subtitle is-6" style="margin-bottom: 5px;">End</h2>
+                    <div class="videobox">
+                      <video preload="none" poster="" playsinline controls muted loop width="100%">
+                        <source src="static/images/motion_inbetween/inbetween_006_generation_2_white_bg_end.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="column is-half">
-              <div class="content has-text-centered">
-                <h2 class="subtitle is-6" style="margin-bottom: 5px;">Generation Result</h2>
-                <div class="videobox">
-                  <video preload="none" poster="" id="pelvis" playsinline controls muted loop width="100%">
-                    <source src="./static/images/keyframe control/keyframe_010_generation_3_white_bg_freeze.mp4"
-                            type="video/mp4">
-                  </video>
+            <div class="column is-5">
+              <div class="columns is-gapless is-centered">
+                <div class="column is-one-third">
+                  <div class="content has-text-centered">
+                    <h2 class="subtitle is-6" style="margin-bottom: 5px;">Start</h2>
+                    <div class="videobox">
+                      <video preload="none" poster="" playsinline controls muted loop width="100%">
+                        <source src="static/images/motion_inbetween/inbtween_035_generation_2_white_bg_start.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-one-third">
+                  <div class="content has-text-centered">
+                    <h2 class="subtitle is-6" style="margin-bottom: 5px;">Result</h2>
+                    <div class="videobox">
+                      <video preload="none" poster="" playsinline controls muted loop width="100%">
+                        <source src="static/images/motion_inbetween/inbtween_035_generation_2_white_bg.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-one-third">
+                  <div class="content has-text-centered">
+                    <h2 class="subtitle is-6" style="margin-bottom: 5px;">End</h2>
+                    <div class="videobox">
+                      <video preload="none" poster="" playsinline controls muted loop width="100%">
+                        <source src="static/images/motion_inbetween/inbtween_035_generation_2_white_bg_end.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Sample 2 -->
-        <div class="column is-4">
-          <div class="columns is-gapless is-centered">
-            <div class="column is-half">
-              <div class="content has-text-centered">
-                <h2 class="subtitle is-6" style="margin-bottom: 5px;">Keyframe Input</h2>
-                <div class="videobox">
-                  <img src="static/images/keyframe control/contact_keyframe_val_sample_122_idx32848_generation_0_mano_white_bg/frame_0031.png" width="100%">
+        <!-- Keyframe Control -->
+        <div class="task-panel" id="tab-keyframe">
+          <div class="columns is-centered">
+            <div class="column is-4">
+              <div class="columns is-gapless is-centered">
+                <div class="column is-half">
+                  <div class="content has-text-centered">
+                    <h2 class="subtitle is-6" style="margin-bottom: 5px;">Keyframe Input</h2>
+                    <div class="videobox">
+                      <img src="static/images/keyframe control/keyframe_010_generation_3_white_bg/frame_0031.png" width="100%">
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-half">
+                  <div class="content has-text-centered">
+                    <h2 class="subtitle is-6" style="margin-bottom: 5px;">Result</h2>
+                    <div class="videobox">
+                      <video preload="none" poster="" playsinline controls muted loop width="100%">
+                        <source src="./static/images/keyframe control/keyframe_010_generation_3_white_bg_freeze.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="column is-half">
-              <div class="content has-text-centered">
-                <h2 class="subtitle is-6" style="margin-bottom: 5px;">Generation Result</h2>
-                <div class="videobox">
-                  <video preload="none" poster="" id="pelvis" playsinline controls muted loop width="100%">
-                    <source src="./static/images/keyframe control/contact_keyframe_val_sample_122_idx32848_generation_0_mano_white_bg_freeze.mp4"
-                            type="video/mp4">
-                  </video>
+            <div class="column is-4">
+              <div class="columns is-gapless is-centered">
+                <div class="column is-half">
+                  <div class="content has-text-centered">
+                    <h2 class="subtitle is-6" style="margin-bottom: 5px;">Keyframe Input</h2>
+                    <div class="videobox">
+                      <img src="static/images/keyframe control/contact_keyframe_val_sample_122_idx32848_generation_0_mano_white_bg/frame_0031.png" width="100%">
+                    </div>
+                  </div>
+                </div>
+                <div class="column is-half">
+                  <div class="content has-text-centered">
+                    <h2 class="subtitle is-6" style="margin-bottom: 5px;">Result</h2>
+                    <div class="videobox">
+                      <video preload="none" poster="" playsinline controls muted loop width="100%">
+                        <source src="./static/images/keyframe control/contact_keyframe_val_sample_122_idx32848_generation_0_mano_white_bg_freeze.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <br>
 
-      <!-- Row 3 -->
-      <div class="columns is-centered has-text-centered">
-        <h2 class="title is-4">Wrist Trajectory Control</h2>
-      </div>
-      <br>
-      <div class="columns is-centered" style="gap: 1.5rem;">
-        <div class="column is-one-fifth">
-          <div class="content has-text-centered">
-
-            <div class="videobox">
-            <video preload="none" poster="" id="pelvis" playsinline controls muted loop width="100%">
-              <source src="./static/images/wrist_control/wrist_066_generation_2_mano_white_bg.mp4"
-                      type="video/mp4">
-            </video>
+        <!-- Wrist Trajectory Control -->
+        <div class="task-panel" id="tab-wrist">
+          <div class="columns is-centered" style="gap: 1.5rem;">
+            <div class="column is-3">
+              <div class="videobox">
+                <video preload="none" poster="" playsinline controls muted loop width="100%">
+                  <source src="./static/images/wrist_control/wrist_066_generation_2_mano_white_bg.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div class="column is-3">
+              <div class="videobox">
+                <video preload="none" poster="" playsinline controls muted loop width="100%">
+                  <source src="./static/images/wrist_control/wrist_traj_val_sample_095_generation_0_white_bg.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
           </div>
         </div>
-        <div class="column is-one-fifth">
-          <div class="content has-text-centered">
 
-            <div class="videobox">
-            <video preload="none" poster="" id="pelvis" playsinline controls muted loop width="100%">
-              <source src="./static/images/wrist_control/wrist_traj_val_sample_095_generation_0_white_bg.mp4"
-                      type="video/mp4">
-            </video>
+        <!-- Hand-reaction Synthesis -->
+        <div class="task-panel" id="tab-reaction">
+          <div class="columns is-centered" style="gap: 1.5rem;">
+            <div class="column is-3">
+              <div class="videobox">
+                <video preload="none" poster="" playsinline controls muted loop width="100%">
+                  <source src="./static/images/fix_left/fix_lefthand_val_sample_208_generation_2_mano_white_bg.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div class="column is-3">
+              <div class="videobox">
+                <video preload="none" poster="" playsinline controls muted loop width="100%">
+                  <source src="./static/images/fix_left/fixleft_189_generation_0_white_bg.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <br>
 
-      <!-- Row 4 -->
-      <div class="columns is-centered has-text-centered">
-        <h2 class="title is-4">Hand-reaction Synthesis</h2>
-      </div>
-      <br>
-      <div class="columns is-centered" style="gap: 1.5rem;">
-        <div class="column is-one-fifth">
-          <div class="content has-text-centered">
-
-            <div class="videobox">
-            <video preload="none" poster="" id="pelvis" playsinline controls muted loop width="100%">
-              <source src="./static/images/fix_left/fix_lefthand_val_sample_208_generation_2_mano_white_bg.mp4"
-                      type="video/mp4">
-            </video>
+        <!-- Long Horizon Generation -->
+        <div class="task-panel" id="tab-longhorizon">
+          <div class="columns is-centered" style="gap: 1.5rem;">
+            <div class="column is-3">
+              <div class="videobox">
+                <video preload="none" poster="" playsinline controls muted loop width="100%">
+                  <source src="./static/images/long_horizon/024_combined_2_mano_white_bg.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <div class="column is-3">
+              <div class="videobox">
+                <video preload="none" poster="" playsinline controls muted loop width="100%">
+                  <source src="./static/images/long_horizon/stage12_white_bg.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <div class="columns is-centered">
+            <div class="column is-8">
+              <div class="content has-text-centered">
+                <p class="subtitle is-7" style="color: #888; margin-top: 0.5rem;">The green section represents the first prompt's results, and the orange section represents the second prompt's results. The model ensures smooth transitions between segments.</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="column is-one-fifth">
-          <div class="content has-text-centered">
 
-            <div class="videobox">
-            <video preload="none" poster="" id="pelvis" playsinline controls muted loop width="100%">
-              <source src="./static/images/fix_left/fixleft_189_generation_0_white_bg.mp4"
-                      type="video/mp4">
-            </video>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br>
-
-      <!-- Row 5 -->
-      <div class="columns is-centered has-text-centered">
-        <h2 class="title is-4">Long Horizon Generation</h2>
-      </div>
-      <br>
-      <div class="columns is-centered" style="gap: 1.5rem;">
-        <div class="column is-one-fifth">
-          <div class="content has-text-centered">
-
-            <div class="videobox">
-            <video preload="none" poster="" id="pelvis" playsinline controls muted loop width="100%">
-              <source src="./static/images/long_horizon/024_combined_2_mano_white_bg.mp4"
-                      type="video/mp4">
-            </video>
-            </div>
-          </div>
-        </div>
-        <div class="column is-one-fifth">
-          <div class="content has-text-centered">
-
-            <div class="videobox">
-            <video preload="none" poster="" id="pelvis" playsinline controls muted loop width="100%">
-              <source src="./static/images/long_horizon/stage12_white_bg.mp4"
-                      type="video/mp4">
-            </video>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content has-text-centered">
-            <p class="subtitle is-7" style="color: #666; margin-top: -10px;">The green section represents the results generated by the first prompt, while the orange section represents the results generated by the second prompt. Our model ensures smooth transitions while maintaining correspondence between the motion and their respective text segments.</p>
-          </div>
-        </div>
-      </div>
       </div>
     </div>
   </section>
@@ -865,6 +829,28 @@
   carouselIds.forEach(id => {
     const el = document.querySelector(id);
     if (el) carouselObserver.observe(el);
+  });
+
+  // Task tab switching
+  document.querySelectorAll('.task-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Deactivate all tabs and panels
+      document.querySelectorAll('.task-tab').forEach(t => t.classList.remove('is-active'));
+      document.querySelectorAll('.task-panel').forEach(p => {
+        p.classList.remove('is-active');
+        p.querySelectorAll('video').forEach(v => v.pause());
+      });
+      // Activate clicked tab and its panel
+      btn.classList.add('is-active');
+      const panel = document.getElementById(btn.dataset.target);
+      if (panel) {
+        panel.classList.add('is-active');
+        panel.querySelectorAll('video').forEach(v => {
+          if (v.preload === 'none') { v.preload = 'auto'; v.load(); }
+          v.play().catch(() => {});
+        });
+      }
+    });
   });
 
   function copyBibTeX() {
