@@ -544,69 +544,80 @@
       <div class="columns is-centered has-text-centered fade-in">
         <h2 class="title is-3"><span style="color: #379cab">Qualitative</span> Evaluation on Scaling Law</h2>
       </div>
-      <!-- Sample 1 -->
-      <div class="columns is-centered" style="margin-top:1rem; gap: 4.5rem;">
-        <div class="column is-3">
-          <div class="content has-text-centered">
-            <h2 class="subtitle is-5" style="margin-bottom: 10px;">Trained on 100% Dataset</h2>
-            <div class="videobox">
-              <video preload="none" poster="" playsinline controls muted loop width="100%">
-                <source src="./static/images/scaling_law/text2motion_val_sample_050_generation_0_white_bg.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
+      <div class="scaling-wrapper" style="margin-top:1rem;">
+        <div class="teaser-toggle">
+          <button type="button" class="teaser-toggle-btn is-active" data-target="scaling-sample1">Sample 1</button>
+          <button type="button" class="teaser-toggle-btn" data-target="scaling-sample2">Sample 2</button>
         </div>
-        <div class="column is-3">
-          <div class="content has-text-centered">
-            <h2 class="subtitle is-5" style="margin-bottom: 10px;">Trained on 20% Dataset</h2>
-            <div class="videobox">
-              <video preload="none" poster="" playsinline controls muted loop width="100%">
-                <source src="./static/images/scaling_law/data20_50_generation_0_white_bg.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-7">
-          <p class="hand-description">
-            <span style="color:rgb(220, 53, 69)">Left</span>: Thumb contacts index then pinky tip; fingers straighten and spread apart.<br>
-            <span style="color:rgb(31, 189, 225)">Right</span>: Thumb contacts index tip; fingers extend from bent to straight.<br>
-            <span style="color:rgb(40, 167, 69)">Relation</span>: Hands stay far apart; relative alignment changes dynamically.
-          </p>
-        </div>
-      </div>
 
-      <!-- Sample 2 -->
-      <div class="columns is-centered" style="gap: 4.5rem;">
-        <div class="column is-3">
-          <div class="content has-text-centered">
-            <h2 class="subtitle is-5" style="margin-bottom: 10px;">Trained on 100% Dataset</h2>
-            <div class="videobox">
-              <video preload="none" poster="" playsinline controls muted loop width="100%">
-                <source src="./static/images/scaling_law/text2motion_val_sample_062_generation_0_white_bg.mp4" type="video/mp4">
-              </video>
+        <!-- Sample 1 -->
+        <div class="teaser-content is-active" id="scaling-sample1">
+          <div class="columns is-centered" style="gap: 4.5rem;">
+            <div class="column is-3">
+              <div class="content has-text-centered">
+                <h2 class="subtitle is-5" style="margin-bottom: 10px;">Trained on 100% Dataset</h2>
+                <div class="videobox">
+                  <video preload="none" poster="" playsinline controls muted loop width="100%">
+                    <source src="./static/images/scaling_law/text2motion_val_sample_050_generation_0_white_bg.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+            <div class="column is-3">
+              <div class="content has-text-centered">
+                <h2 class="subtitle is-5" style="margin-bottom: 10px;">Trained on 20% Dataset</h2>
+                <div class="videobox">
+                  <video preload="none" poster="" playsinline controls muted loop width="100%">
+                    <source src="./static/images/scaling_law/data20_50_generation_0_white_bg.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-7">
+              <p class="hand-description">
+                <span style="color:rgb(220, 53, 69)">Left</span>: Thumb contacts index then pinky tip; fingers straighten and spread apart.<br>
+                <span style="color:rgb(31, 189, 225)">Right</span>: Thumb contacts index tip; fingers extend from bent to straight.<br>
+                <span style="color:rgb(40, 167, 69)">Relation</span>: Hands stay far apart; relative alignment changes dynamically.
+              </p>
             </div>
           </div>
         </div>
-        <div class="column is-3">
-          <div class="content has-text-centered">
-            <h2 class="subtitle is-5" style="margin-bottom: 10px;">Trained on 20% Dataset</h2>
-            <div class="videobox">
-              <video preload="none" poster="" playsinline controls muted loop width="100%">
-                <source src="./static/images/scaling_law/data20_062_generation_1_white_bg.mp4" type="video/mp4">
-              </video>
+
+        <!-- Sample 2 -->
+        <div class="teaser-content" id="scaling-sample2">
+          <div class="columns is-centered" style="gap: 4.5rem;">
+            <div class="column is-3">
+              <div class="content has-text-centered">
+                <h2 class="subtitle is-5" style="margin-bottom: 10px;">Trained on 100% Dataset</h2>
+                <div class="videobox">
+                  <video preload="none" poster="" playsinline controls muted loop width="100%">
+                    <source src="./static/images/scaling_law/text2motion_val_sample_062_generation_0_white_bg.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+            <div class="column is-3">
+              <div class="content has-text-centered">
+                <h2 class="subtitle is-5" style="margin-bottom: 10px;">Trained on 20% Dataset</h2>
+                <div class="videobox">
+                  <video preload="none" poster="" playsinline controls muted loop width="100%">
+                    <source src="./static/images/scaling_law/data20_062_generation_1_white_bg.mp4" type="video/mp4">
+                  </video>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-7">
-          <p class="hand-description">
-            <span style="color:rgb(220, 53, 69)">Left</span>: Two thumb-index contacts; ring and pinky curl inwards.<br>
-            <span style="color:rgb(31, 189, 225)">Right</span>: Thumb-index contact, then fingers gradually extend straight.<br>
-            <span style="color:rgb(40, 167, 69)">Relation</span>: Constant distant spatial relationship between hands.
-          </p>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-7">
+              <p class="hand-description">
+                <span style="color:rgb(220, 53, 69)">Left</span>: Two thumb-index contacts; ring and pinky curl inwards.<br>
+                <span style="color:rgb(31, 189, 225)">Right</span>: Thumb-index contact, then fingers gradually extend straight.<br>
+                <span style="color:rgb(40, 167, 69)">Relation</span>: Constant distant spatial relationship between hands.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -839,14 +850,22 @@
     if (el) carouselObserver.observe(el);
   });
 
-  // Teaser toggle (video / figure)
+  // Teaser / scaling toggle (scoped per wrapper)
   document.querySelectorAll('.teaser-toggle-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.teaser-toggle-btn').forEach(b => b.classList.remove('is-active'));
-      document.querySelectorAll('.teaser-content').forEach(c => c.classList.remove('is-active'));
+      const wrapper = btn.closest('.teaser-wrapper, .scaling-wrapper');
+      if (!wrapper) return;
+      wrapper.querySelectorAll('.teaser-toggle-btn').forEach(b => b.classList.remove('is-active'));
+      wrapper.querySelectorAll('.teaser-content').forEach(c => {
+        c.classList.remove('is-active');
+        c.querySelectorAll('video').forEach(v => v.pause());
+      });
       btn.classList.add('is-active');
       const target = document.getElementById(btn.dataset.target);
-      if (target) target.classList.add('is-active');
+      if (target) {
+        target.classList.add('is-active');
+        target.querySelectorAll('video').forEach(v => v.play().catch(() => {}));
+      }
     });
   });
 
