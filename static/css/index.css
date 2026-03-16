@@ -29,7 +29,7 @@ body {
 
 .teaser .hero-body {
   padding-top: 0;
-  padding-bottom: 3rem;
+  padding-bottom: 1.5rem;
 }
 
 .teaser {
@@ -55,6 +55,7 @@ body {
 }
 
 .publication-header .hero-body {
+  padding-bottom: 1rem;
 }
 
 .publication-authors {
@@ -695,4 +696,56 @@ body {
 
 .task-panel.is-active {
   display: block !important;
+}
+
+/* ── Teaser toggle ── */
+.teaser-wrapper {
+  position: relative;
+}
+
+.teaser-toggle {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  z-index: 10;
+  display: flex;
+  gap: 0.35rem;
+}
+
+.teaser-toggle-btn {
+  font-family: 'Google Sans', 'Noto Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 0.25rem 0.75rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.teaser-toggle-btn:hover {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.teaser-toggle-btn.is-active {
+  color: #fff;
+  background: rgba(55, 156, 171, 0.8);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.teaser-content {
+  display: none;
+  animation: fadeInUp 0.35s ease forwards;
+}
+
+.teaser-content.is-active {
+  display: block;
 }
