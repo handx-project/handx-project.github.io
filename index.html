@@ -34,8 +34,12 @@
   </head>
   <body>
 
+  <div class="scroll-progress" id="scrollProgress"></div>
   <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
+      <a class="navbar-item navbar-logo" href="#">
+        <span class="navbar-logo-text">Hand</span><span class="navbar-logo-accent">X</span>
+      </a>
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNavbar">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -43,13 +47,13 @@
       </a>
     </div>
     <div id="mainNavbar" class="navbar-menu">
-      <div class="navbar-start" style="flex-grow:1; justify-content:center;">
-        <a class="navbar-item is-size-5" href="#abstract">Abstract</a>
-        <a class="navbar-item is-size-5" href="#dataset">Dataset</a>
-        <a class="navbar-item is-size-5" href="#generation">Generation</a>
-        <a class="navbar-item is-size-5" href="#tasks">Tasks</a>
-        <a class="navbar-item is-size-5" href="#scaling">Scaling</a>
-        <a class="navbar-item is-size-5" href="#BibTeX">BibTeX</a>
+      <div class="navbar-end">
+        <a class="navbar-item" href="#abstract">Abstract</a>
+        <a class="navbar-item" href="#dataset">Dataset</a>
+        <a class="navbar-item" href="#generation">Generation</a>
+        <a class="navbar-item" href="#tasks">Tasks</a>
+        <a class="navbar-item" href="#scaling">Scaling</a>
+        <a class="navbar-item" href="#BibTeX">BibTeX</a>
       </div>
     </div>
   </nav>
@@ -60,33 +64,34 @@
           <div class="columns is-centered">
             <div class="column has-text-centered">
               <h1 class="title is-2 publication-title" style="font-family: 'Noto Sans', sans-serif"><span style="color: #379cab">HandX:</span> Scaling Bimanual Motion and Interaction Generation</h1>
-              <div class="is-size-5 publication-authors">
-                <span class="author-block"><a href="" target="_blank" rel="noopener"></a>Zimu Zhang<sup>1</sup><sup>†</sup></span>
-                <span class="author-block"><a href="https://nboierzyc.github.io/" target="_blank" rel="noopener">Yucheng Zhang</a><sup>1</sup><sup>†</sup></span>
+              <div class="is-size-5 publication-authors author-list">
+                <span class="author-block"><a href="" target="_blank" rel="noopener">Zimu Zhang</a><sup>1,†</sup></span>
+                <span class="author-block"><a href="https://nboierzyc.github.io/" target="_blank" rel="noopener">Yucheng Zhang</a><sup>1,†</sup></span>
                 <span class="author-block"><a href="https://xiyan-xu.github.io/" target="_blank" rel="noopener">Xiyan Xu</a><sup>1</sup></span>
-                <span class="author-block"><a href="" target="_blank" rel="noopener"></a>Ziyin Wang<sup>1</sup></span>
-                <span class="author-block"><a href="https://sirui-xu.github.io/" target="_blank" rel="noopener">Sirui Xu</a><sup>1</sup><sup>‡</sup></span>
-                <span class="author-block"><a href="" target="_blank" rel="noopener"></a>Kai Zhou<sup>2,3</sup></span>
-                <br>
+                <span class="author-block"><a href="" target="_blank" rel="noopener">Ziyin Wang</a><sup>1</sup></span>
+                <span class="author-block"><a href="https://sirui-xu.github.io/" target="_blank" rel="noopener">Sirui Xu</a><sup>1,‡</sup></span>
+                <span class="author-block"><a href="" target="_blank" rel="noopener">Kai Zhou</a><sup>2,3</sup></span>
                 <span class="author-block"><a href="https://zhoubinwy.github.io/" target="_blank" rel="noopener">Bing Zhou</a><sup>3</sup></span>
                 <span class="author-block"><a href="https://ericguo5513.github.io/" target="_blank" rel="noopener">Chuan Guo</a><sup>3</sup></span>
                 <span class="author-block"><a href="https://jianwang-cmu.github.io/" target="_blank" rel="noopener">Jian Wang</a><sup>3</sup></span>
-                <span class="author-block"><a href="https://yxw.cs.illinois.edu/" target="_blank" rel="noopener">Yu-Xiong Wang</a><sup>1</sup><sup>*</sup></span>
-                <span class="author-block"><a href="https://lgui.web.illinois.edu/" target="_blank" rel="noopener">Liang-Yan Gui</a><sup>1</sup><sup>*</sup></span>
+                <span class="author-block"><a href="https://yxw.cs.illinois.edu/" target="_blank" rel="noopener">Yu-Xiong Wang</a><sup>1,*</sup></span>
+                <span class="author-block"><a href="https://lgui.web.illinois.edu/" target="_blank" rel="noopener">Liang-Yan Gui</a><sup>1,*</sup></span>
               </div>
-              <div class="is-size-6 publication-authors" style="margin-top: 0.05rem;">
-                <span class="author-block"><sup>1</sup>University of Illinois Urbana-Champaign</span>
-                <span class="author-block"><sup>2</sup>Specs Inc.</span>
-                <span class="author-block"><sup>3</sup>Snap Inc.</span>
+              <div class="publication-affiliations">
+                <span class="affiliation-item"><sup>1</sup>University of Illinois Urbana-Champaign</span>
+                <span class="affiliation-item"><sup>2</sup>Specs Inc.</span>
+                <span class="affiliation-item"><sup>3</sup>Snap Inc.</span>
               </div>
-              <div class="is-size-6 publication-authors" style="margin-top: 0.05rem;">
-                <span class="author-block"><sup>†</sup>Equal Contribution</span>
-                <span class="author-block"><sup>‡</sup>Project Lead</span>
-                <span class="author-block"><sup>*</sup>Equal Advising</span>
+              <div class="publication-notes">
+                <span><sup>†</sup>Equal Contribution</span>
+                <span class="note-sep"></span>
+                <span><sup>‡</sup>Project Lead</span>
+                <span class="note-sep"></span>
+                <span><sup>*</sup>Equal Advising</span>
               </div>
-              <div class="is-size-5 publication-authors" style="margin-top: 0.25rem;">
-                    <span class="author-block">CVPR 2026</span>           
-                  </div>
+              <div class="publication-venue-badge">
+                <span>CVPR 2026</span>
+              </div>
               <div class="column has-text-centered">
                     <div class="publication-links">
                       <span class="link-block">
@@ -152,7 +157,7 @@
 </section>
   <!-- End paper abstract -->
 
-<section class="section" id="abstract" style="background-color:#fcfcfc;">
+<section class="section" id="abstract">
   <div class="container is-max-widescreen">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered fade-in">
@@ -191,7 +196,7 @@
 </section>
 <!-- End Dataset Comparison -->
 
-  <section class="section" style="background-color:#fcfcfc;">
+  <section class="section">
     <div class="container is-max-widescreen">
       <div class="columns is-centered has-text-centered fade-in">
         <h2 class="title is-3"><span style="color: #379cab">Dataset</span> Examples</h2>
@@ -313,7 +318,7 @@
     </div>
   </section>
 
-  <section class="section" id="tasks" style="background-color:#fcfcfc;">
+  <section class="section" id="tasks">
     <div class="container is-max-widescreen">
       <div class="columns is-centered has-text-centered fade-in">
         <h2 class="title is-3"><span style="color: #379cab">Versatile</span> Generation Tasks</h2>
@@ -637,7 +642,7 @@
 
 
 <!-- Motion Capture Setup -->
-<section class="section" style="background-color:#fcfcfc;">
+<section class="section">
   <div class="container is-max-widescreen">
     <div class="columns is-centered has-text-centered fade-in">
       <h2 class="title is-3"><span style="color: #379cab">Motion</span> Capture</h2>
@@ -754,6 +759,36 @@
         target.classList.toggle('is-active');
       });
     });
+
+    // Scroll-spy: highlight active navbar link
+    const navLinks = document.querySelectorAll('.navbar-menu .navbar-item[href^="#"]');
+    const sections = [];
+    navLinks.forEach(link => {
+      const id = link.getAttribute('href').slice(1);
+      const sec = document.getElementById(id);
+      if (sec) sections.push({ el: sec, link: link });
+    });
+
+    // Scroll progress bar
+    const progressBar = document.getElementById('scrollProgress');
+
+    if (sections.length) {
+      const onScroll = () => {
+        const scrollY = window.scrollY + 100;
+        // Active nav link
+        let current = sections[0];
+        sections.forEach(s => {
+          if (s.el.offsetTop <= scrollY) current = s;
+        });
+        navLinks.forEach(l => l.classList.remove('is-active-link'));
+        current.link.classList.add('is-active-link');
+        // Progress bar
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = (window.scrollY / docHeight * 100) + '%';
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
 
     // Fade-in on scroll
     const fadeEls = document.querySelectorAll('.fade-in');
