@@ -3,6 +3,10 @@
   src:url("fonts/MouldyCheeseRegular-WyMWG.ttf");
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Noto Sans', sans-serif;
 }
@@ -34,6 +38,7 @@ body {
 
 
 .publication-title {
+  font-family: 'Google Sans', sans-serif;
 }
 
 .publication-banner {
@@ -50,10 +55,6 @@ body {
 }
 
 .publication-header .hero-body {
-}
-
-.publication-title {
-    font-family: 'Times', sans-serif;
 }
 
 .publication-authors {
@@ -74,9 +75,6 @@ body {
     font-weight: bolder;
 }
 
-.publication-authors {
-}
-
 .publication-authors a {
    color: hsl(204, 86%, 53%) !important;
 }
@@ -91,10 +89,6 @@ body {
 }
 
 .publication-banner img {
-}
-
-.publication-authors {
-  /*color: #4286f4;*/
 }
 
 .publication-video {
@@ -157,17 +151,25 @@ body {
   background: #000000;
 }
 
+.carousel {
+  overflow: hidden;
+  max-width: 100%;
+}
+
 .eql-cntrb {
   font-size: smaller;
 }
 
 .hand-description {
-  font-size: 0.5em;
-  font-weight: 100 !important;
-  line-height: 1.08 !important;
+  font-size: 0.9rem;
+  font-weight: 400 !important;
+  line-height: 1.35 !important;
   text-align: left !important;
   min-height: 80px;
   display: block;
+  color: #555;
+  margin-top: 0.5rem;
+  padding: 0 0.25rem;
 }
 
 .interpolation-panel {
@@ -187,10 +189,6 @@ body {
   margin: 0 !important;
 }
 
-.interpolation-panel .slider {
-  margin: 0 !important;
-}
-
 #interpolation-image-wrapper {
   width: 100%;
 }
@@ -198,11 +196,62 @@ body {
   border-radius: 5px;
 }
 
+/* Prompt box */
+.prompt-box {
+  background: #f5f5f5;
+  padding: 0.9rem 1.4rem;
+  margin-bottom: 1.25rem;
+  border-radius: 4px;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+}
 
+/* Alternating section background */
+.section-alt {
+  background-color: #fcfcfc;
+}
 
+/* Navbar burger toggle */
+.navbar-burger span {
+  height: 2px;
+}
 
+.navbar-burger.is-active span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
 
+.navbar-burger.is-active span:nth-child(2) {
+  opacity: 0;
+}
 
+.navbar-burger.is-active span:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
 
+/* BibTeX header */
+.bibtex-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+/* Copy BibTeX button */
+.copy-bibtex-btn {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
 
+.copy-bibtex-btn:hover {
+  background: #f5f5f5;
+  border-color: #999;
+}

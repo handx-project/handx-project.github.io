@@ -6,16 +6,18 @@ $(document).ready(function() {
 
     var options = {
 			slidesToScroll: 1,
-			slidesToShow: 1,
+			slidesToShow: 3,
 			loop: true,
 			infinite: true,
 			autoplay: true,
 			autoplaySpeed: 5000,
     }
 
-		// Initialize all div with carousel class
-    var carousels = bulmaCarousel.attach('.carousel', options);
-	
+		// Initialize carousels
+    bulmaCarousel.attach('#dataset-carousel', options);
+    bulmaCarousel.attach('#text2motion-carousel', options);
+    bulmaCarousel.attach('#mocap-carousel', options);
+
     bulmaSlider.attach();
 
 })
